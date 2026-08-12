@@ -1,4 +1,10 @@
 "use client";
+import { connection } from 'next/server'
+ 
+export default async function Page() {
+  await connection()
+  return <div>...</div>
+}
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
