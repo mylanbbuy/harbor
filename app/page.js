@@ -1,4 +1,18 @@
 "use client";
+import { Suspense } from 'react'
+import ClientSearch from './client-search'
+ 
+export default function Page({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>
+}) {
+  return (
+    <Suspense fallback={<>...</>}>
+      <ClientSearch searchParams={searchParams} />
+    </Suspense>
+  )
+}
 import { connection } from 'next/server'
  
 export default async function Page() {
